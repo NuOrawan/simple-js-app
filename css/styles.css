@@ -8,3 +8,68 @@ and open the template in the editor.
     Author     : nu
 */
 
+
+
+:root {
+    /* Font and background color variables*/
+  --purple: #b200ff;
+  --light-purple: #7D7098;
+  --pewter:  #E9EAEC;
+  --dark-grey: #6F7378;
+  --light-grey: #979797;
+  --white: #FFF;
+  --blue: #4120A9;
+  --black: #000;
+  --red: #FF0000;
+  /*Font weight variables for headings*/
+  --heading-weight: 700; 
+ /*Font weight variables*/
+  --text-weight: 400; 
+  /*Font size variables*/
+  --font-size-default: 100%;
+  --font-size-1: 1em;
+  --font-size-2: 1.2em;
+  --font-size-3: 1.44em;
+  --font-size-4: 1.728em;
+  --font-size-5: 2.074em;
+  --font-size-6: 2.488em;
+}
+
+
+ /* Set the box-sizing to border-box on all elements */
+ * {
+    box-sizing: border-box;
+ }
+body {
+  font-family: 'Lato', sans-serif;
+  color: var(--dark-grey);
+  font-weight: var(--text-weight);
+  font-size: var(--font-size-default);
+  line-height: 1.6;
+  background-color: var(--white);
+  padding: 10px;
+}
+
+h1 {
+  font-size: var(--font-size-4);
+  font-weight: var(--heading-weight);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2 {
+  font-size: var(--font-size-3);
+  font-weight: var(--heading-weight);
+}
+
+h3 {
+  font-size: var(--font-size-2);
+  font-weight: var(--heading-weight);
+}
+.highlight{
+    color: var(--purple);
+    font-weight: var(--heading-weight);
+}
+.centered{
+    text-align: center;
+}
