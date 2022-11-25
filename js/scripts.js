@@ -8,14 +8,14 @@ Each object has name as String, height as number in millimeter and type which is
 
 pokemonList = [
     {name : "Bulbasaur", height : 0.7 , types :["grass","poison"]},
-    {name : "Charmander", height : 0.6 , types :['fire']},
-    {name : "Beedrill", height : 1.0, types : ['bug', 'poison']},
-    {name : "Pikachu", height : 0.4, types : ['electric']},
-    {name : "Jigglypuff", height : 0.5 , types : ['fairy', 'normal']}
+    {name : "Charmander", height : 0.6 , types :["fire"]},
+    {name : "Beedrill", height : 1.0, types : ["bug", "poison"]},
+    {name : "Pikachu", height : 0.4, types : ["electric"]},
+    {name : "Jigglypuff", height : 0.5 , types : ["fairy", "normal"]}
 ];
 
 /*Iliterate each pokemon character in the list using for loop. Write each name and height, for example
-Bulbasaur (height: 7)*/
+Bulbasaur (height: 7)
 for (let i=0; i < pokemonList.length; i++){
     //Highlight Pokemon only if its height at least 1.0 by adding Wow, that's big.  
     if (pokemonList[i].height >= 1.0){
@@ -27,4 +27,9 @@ for (let i=0; i < pokemonList.length; i++){
     }
     
      
-}
+}*/
+//Iliterate each pokemon character using forEach()
+pokemonList.forEach(function(list) {
+  document.write("<b>"+list.name + "</b><br>")  
+  document.write("Height : " + list.height + ". Type : " + list.types + "<br>");
+});
