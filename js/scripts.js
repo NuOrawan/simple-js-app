@@ -1,4 +1,5 @@
 
+
 /* List Pokémon and information about them.
  First, set pokemonList array to blank array. This array contains Pokémon data to display in the application.*/
 let pokemonList = []; 
@@ -28,8 +29,8 @@ for (let i=0; i < pokemonList.length; i++){
     
      
 }*/
-//Iliterate each pokemon character using forEach()
+/*Iliterate each pokemon character using forEach()*/
 pokemonList.forEach(function(list) {
-  document.write("<b>"+list.name + "</b><br>")  
+  document.write("<b>"+list.name + "</b><br>");  
   document.write("Height : " + list.height + ". Type : " + list.types + "<br>");
 });
