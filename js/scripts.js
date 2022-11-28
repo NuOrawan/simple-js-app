@@ -16,7 +16,7 @@ let pokemonRepository = (function(){
     //Add Pokemon objects to the array
     function add(pokemon){
         //Check if parameter is type of Object and not null
-        if (typeof pokemon === 'object' && pokemon !== null){
+        if (typeof pokemon === 'object' && pokemon !== null && Object.keys(pokemon) === ["name", "height", "types"] ){
             pokemonList.push(pokemon);
         } else {
             console.log("Invalid input! Please try again.");
