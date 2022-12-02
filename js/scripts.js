@@ -25,6 +25,37 @@ let pokemonRepository = (function(){
     function getAll(){
         return pokemonList;
     }
+     //Add pokemon to List (li)
+    function addListItem(pokemon){
+        let pokemonList = document.querySelector(".pokemon-list");
+        //Create li for each pokemon
+        let listPokemon = document.createElement("li");
+        //Apply list style none
+        listPokemon.classList.add("noneList");
+        //Create button style
+        let button = document.createElement("button");
+        //Add pokemon name to button
+        button.innerText = pokemon.name;
+        //Add class to button
+        button.classList.add("button");
+        //Append button to li
+        listPokemon.appendChild(button);
+        //Append li to pokemon-list
+        pokemonList.appendChild(listPokemon);
+        //Call addBtnEvent to create eventhandler for each newly created button
+        addBtnEvent(button,pokemon);
+    }
+    //Add the event listener to the newly created button
+    function addBtnEvent(button,pokemon){
+        button.addEventListener('click', function () {
+        //Call showDetails function when a button is clicked. 
+        showDetails(pokemon);
+        });
+    }
+    //Show details of pokemon in console
+    function showDetails(pokemon){
+        console.log(pokemon);
+    }
     //Search pokemon in the array by name
     function findByName(name){
         //Check if name is String and not empty
@@ -38,28 +69,27 @@ let pokemonRepository = (function(){
             console.log("Please try entering pokemon name again.");
         }
     }
-    
     return{
+        addListItem,
         add,
         getAll,
-        findByName
+        findByName,
+        showDetails
     };
     
  })();
- //Add new pokemon object
- pokemonRepository.add({ name: "Ivysaur", height: 1, types :["grass", "poison"]});
- 
- console.log(pokemonRepository.getAll());
- 
-//Search Pokemon by name for example Pikachu
- console.log(pokemonRepository.findByName("Pikachu"));
-
 //Iliterate each object in pokemonRepository using forEach()
- pokemonRepository.getAll().forEach(function(list) {
-  document.write("<b>"+list.name + "</b><br>");  
-  document.write("Height : " + list.height + ". Type : " + list.types + "<br>");
+ pokemonRepository.getAll().forEach(function(pokemon) {
+     pokemonRepository.addListItem(pokemon);
 });
 
+ //Add new pokemon object
+ //pokemonRepository.add({ name: "Ivysaur", height: 1, types :["grass", "poison"]});
+
+// console.log(pokemonRepository.getAll());
+ 
+//Search Pokemon by name for example Pikachu
+ //console.log(pokemonRepository.findByName("Pikachu"));
 
 /* List Pokémon and information about them.
  First, set pokemonList array to blank array. This array contains Pokémon data to display in the application.

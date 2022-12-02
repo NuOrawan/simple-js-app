@@ -7,20 +7,14 @@ and open the template in the editor.
     Created on : Nov 14, 2022, 2:31:33 PM
     Author     : nu
 */
-
-
-
 :root {
     /* Font and background color variables*/
-  --purple: #b200ff;
-  --light-purple: #7D7098;
-  --pewter:  #E9EAEC;
-  --dark-grey: #6F7378;
-  --light-grey: #979797;
+  --dark-purple: #3e32a8;   
+  --fuchsia : #e310c7;
+  --light-blue: #33FFEF;
+  --light-grey: #f7fafa;
   --white: #FFF;
-  --blue: #4120A9;
   --black: #000;
-  --red: #FF0000;
   /*Font weight variables for headings*/
   --heading-weight: 700; 
  /*Font weight variables*/
@@ -34,9 +28,7 @@ and open the template in the editor.
   --font-size-5: 2.074em;
   --font-size-6: 2.488em;
 }
-
-
- /* Set the box-sizing to border-box on all elements */
+ /* Set the box-sizing to border-box on all elements*/ 
  * {
     box-sizing: border-box;
  }
@@ -47,32 +39,68 @@ body {
   font-size: var(--font-size-default);
   line-height: 1.6;
   background-color: var(--white);
-  padding: 10px;
+  background-image: linear-gradient(90deg,var(--dark-purple),var(--fuchsia));
 }
-
 h1 {
   font-size: var(--font-size-4);
   font-weight: var(--heading-weight);
-  text-transform: uppercase;
+  color: var(--light-blue);
   text-align: center;
 }
-
 h2 {
   font-size: var(--font-size-3);
   font-weight: var(--heading-weight);
 }
-
 h3 {
   font-size: var(--font-size-2);
   font-weight: var(--heading-weight);
-}
-.highlight{
-    color: var(--purple);
-    font-weight: var(--heading-weight);
 }
 .centered{
     text-align: center;
 }
 hr{
-    width: 40%;
+    width: 50%;
+    color: var(--light-grey);
+}
+.container {
+    width: 80%;
+    min-height: 80%;
+}
+.centered{
+    text-align: center;
+}
+/*Pokemon button setting*/
+.button{
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: var(--black);
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: var(--font-size-2);
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    margin-top: 8px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    width: 300px;
+}
+.button:hover {
+    background-color: var(--light-blue);
+}
+.button:focus {
+   background-color: var(--light-blue);
+   box-shadow: 0 0 0 5px rgba(21, 156, 228, 0.4);
+   outline: 0;
+}
+.noneList{
+    list-style: none;
 }
