@@ -6,7 +6,7 @@ let pokemonRepository = (function(){
     //First, set pokemonList array to blank array. This array contains Pokémon data to display in the application.
     let pokemonList = []; 
     //Create variable for API url and get 20 pokemons
-    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20";
+    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
     //Add Pokemon objects to the array
     function add(pokemon){
         //Check if parameter is type of Object and not null
@@ -39,21 +39,36 @@ let pokemonRepository = (function(){
         //Call addBtnEvent to create eventhandler for each newly created button
         addBtnEvent(button,pokemon);
     }
+    //Show loading message in div while Pokemon is loading
+    function showLoadingMessage(){
+        document.querySelector(".loader").style.display = "block";
+    }    
+    //Hide loading message in div when page is done loading
+    function hideLoadingMessage(){
+        document.querySelector(".loader").style.display = "none";
+        //Showing loading is finish in console
+        console.log("Loading finish!");
+    }
     //A promise function to load pokemons from external pokemon API
     function loadList() {
-    return fetch(apiUrl).then(function (response) {
-        return response.json();
-        }).then(function (json) {
-          json.results.forEach(function (item) {
-            let pokemon = {
-              name: item.name,
-              detailsUrl: item.url
-            };
-            add(pokemon);
-          });
-        }).catch(function (e) {
-          console.error(e);
-        });
+        //Call showLoadingMessage to display a loading message while Pokemons are being loaded.
+        showLoadingMessage();
+        return fetch(apiUrl).then(function (response) {
+            return response.json();
+            }).then(function (json) {
+              json.results.forEach(function (item) {
+                let pokemon = {
+                  name: item.name,
+                  detailsUrl: item.url
+                };
+                add(pokemon);
+              });
+              //Call hideLoadingMessage to hide loading message.
+              hideLoadingMessage();
+            }).catch(function (e) {
+                //Display error message in console
+              console.error(e);
+            });
     }
     //Add the event listener to the newly created button
     function addBtnEvent(button,pokemon){
@@ -97,6 +112,7 @@ let pokemonRepository = (function(){
     }
     return{
         addListItem,
+        showLoadingMessage,
         loadList,
         add,
         getAll,

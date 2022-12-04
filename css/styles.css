@@ -104,3 +104,17 @@ hr{
 .noneList{
     list-style: none;
 }
+.loader{
+    position: fixed;
+    top: 10px;
+    left: 50px;
+    width: 50vw;
+    height: 50vh;
+    background-color: var(--light-blue);
+    font-size: var(--font-size-6);
+    color: var(--black);
+    text-align: center;
+}
+.pokemon-list{
+    padding: 2px;
+}
