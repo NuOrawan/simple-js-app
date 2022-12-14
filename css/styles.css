@@ -13,8 +13,10 @@ and open the template in the editor.
   --fuchsia : #e310c7;
   --light-blue: #33FFEF;
   --light-grey: #f7fafa;
+  --dark-grey: #777;
   --white: #FFF;
   --black: #000;
+  --red: #FF0000;
   /*Font weight variables for headings*/
   --heading-weight: 700; 
  /*Font weight variables*/
@@ -87,6 +89,7 @@ hr{
     position: relative;
     text-align: center;
     text-decoration: none;
+    text-transform: Capitalize;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
@@ -117,4 +120,83 @@ hr{
 }
 .pokemon-list{
     padding: 2px;
+}
+/* Login Form setting*/
+.input-wrapper{
+    margin-bottom : 10px;
+}
+label{
+    display: inline-block;
+    min-width: 75px;
+}
+.error-message{
+    color: var(--red);
+    font-size: var(--font-size-1);
+}
+/* Modal setting*/
+#modal-container {
+    display:none;
+}
+#modal-container.is-visible{
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  
+  /* to show it above other content */
+  z-index: 999; 
+  
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto; 
+  
+  /* this is used to center the modal */
+  display: grid;
+  text-align: center;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: var(--white);
+  padding: 15px;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: var(--dark-grey);
+  text-decoration: underline;
+  font-size: var(--font-size-1);
+}
+
+.modal h1 {
+  color: var(--black);
+  margin-top: 0;
+  font-size: var(--font-size-2);
+  text-align : left;
+  text-transform: Uppercase;
+}
+
+.modal p {
+  color: var(--black);
+  margin-bottom: 0;
+  text-align: center;
+  text-transform: Capitalize;
+  display: block;
+}
+.modal img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
 }

@@ -6,7 +6,9 @@ let pokemonRepository = (function(){
     //First, set pokemonList array to blank array. This array contains Pokémon data to display in the application.
     let pokemonList = []; 
     //Create variable for API url and get 20 pokemons
-    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=150";
+    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20";
+    //Declare modal container
+    let modalContainer = document.querySelector("#modal-container");
     //Add Pokemon objects to the array
     function add(pokemon){
         //Check if parameter is type of Object and not null
@@ -91,12 +93,98 @@ let pokemonRepository = (function(){
           console.error(e);
         });
     }
-    //Show details of pokemon in console
     function showDetails(item){
         pokemonRepository.loadDetails(item).then(function(){
-            console.log(item);
+            showModal(item);
         });
     }
+    //Show types of each Pokemon
+    function showTypes(pokemon){
+        let types = "";
+        //Loop through types which is an object from pokeapi.co containing name(s) of type(s) 
+        pokemon.types.forEach(function(obj){
+            type = obj["type"];
+            name = type["name"];
+            //Add space between each type name and make them as one string
+            types = types + name + " ";
+        });
+        return types;
+    }
+    //Hide modal
+    function hideModal(){
+        modalContainer.classList.remove("is-visible");
+    }
+    
+    //Show a modal with the Pokémon’s name, its height, and an image of the Pokémon. 
+    function showModal(item){
+        //pokemonRepository.loadDetails(item).then(function(){
+            console.log(item);
+        //});
+       // let modalContainer = document.querySelector("#modal-container");
+        //Clear all existing message
+        modalContainer.innerText = " ";
+        //Create div for modal
+        let modal = document.createElement("div");
+        //Add class modal to div
+        modal.classList.add("modal");
+        
+        //Create close button in modal
+        let closeButtonElement = document.createElement("button");
+        //Add modal-close class to button
+        closeButtonElement.classList.add("modal-close");
+        //Display text on button
+        closeButtonElement.innerText = "Close";
+        //Add eventlistener when close button is click
+        closeButtonElement.addEventListener("click", hideModal);
+        
+        //Create and display modal title
+        let titleElement = document.createElement("h1");
+        titleElement.innerText = item.name;
+        
+        
+        
+        //Create image element to show Pokemon image
+        let imageElement = document.createElement("img");
+        imageElement.setAttribute("src", item.imageUrl);
+        imageElement.setAttribute("width", "50%");
+        imageElement.setAttribute("height", "50%");
+        imageElement.setAttribute("alt", "Pokemon Name");
+        imageElement.classList.add("img");
+        
+        //Create paragraph and display modal content which contain height and types in the paragraph
+        let contentElement = document.createElement("p");
+        contentElement.innerText = "Height : " + item.height +" Type :" + showTypes(item);
+        
+        //Appendlbutton, title, linebreak, image and content to modal div
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(imageElement);
+        modal.appendChild(contentElement);
+        
+        //Append modal to modalContainer
+        modalContainer.appendChild(modal);
+        
+        //Add is-visible class to modalContainer
+        modalContainer.classList.add("is-visible");
+        
+        //When a user click anywhere else on Modal close Modal
+        modalContainer.addEventListener("click", (e) =>{
+            let target = e.target;
+            //If that target of the click was the modal container, not modal itself,hide the modal.
+            if (target === modalContainer){
+                hideModal();
+            }
+        });
+    }
+      
+    /*When Esc is pressed, call hideModal. Declare modal container is visible first*/
+    window.addEventListener("keydown",(e) => {
+    let modalContainer = document.querySelector("#modal-container");
+        if (e.key === "Escape" && modalContainer.classList.contains("is-visible")){
+            hideModal(); 
+            }
+        });
+        
     //Search pokemon in the array by name
     function findByName(name){
         //Check if name is String and not empty
@@ -110,6 +198,7 @@ let pokemonRepository = (function(){
             console.log("Please try entering pokemon name again.");
         }
     }
+    
     return{
         addListItem,
         showLoadingMessage,
@@ -118,7 +207,8 @@ let pokemonRepository = (function(){
         getAll,
         findByName,
         loadDetails,
-        showDetails
+        showDetails,
+        showModal
     };
     
  })();
@@ -129,45 +219,4 @@ pokemonRepository.loadList().then(function(){
          pokemonRepository.addListItem(pokemon);
     });
 });
- //Add new pokemon object
- //pokemonRepository.add({ name: "Ivysaur", height: 1, types :["grass", "poison"]});
-
-// console.log(pokemonRepository.getAll());
  
-//Search Pokemon by name for example Pikachu
- //console.log(pokemonRepository.findByName("Pikachu"));
-
-/* List Pokémon and information about them.
- First, set pokemonList array to blank array. This array contains Pokémon data to display in the application.
-let pokemonList = []; 
-*/
-/* Adding several pokemon character objects to pokemonList. 
-Each object has name as String, height as number in millimeter and type which is an array of Strings
-
-pokemonList = [
-    {name : "Bulbasaur", height : 0.7 , types :["grass","poison"]},
-    {name : "Charmander", height : 0.6 , types :["fire"]},
-    {name : "Beedrill", height : 1.0, types : ["bug", "poison"]},
-    {name : "Pikachu", height : 0.4, types : ["electric"]},
-    {name : "Jigglypuff", height : 0.5 , types : ["fairy", "normal"]}
-];
-*/
-/*Iliterate each pokemon character in the list using for loop. Write each name and height, for example
-Bulbasaur (height: 7)
-for (let i=0; i < pokemonList.length; i++){
-    //Highlight Pokemon only if its height at least 1.0 by adding Wow, that's big.  
-    if (pokemonList[i].height >= 1.0){
-        document.write (pokemonList[i].name  + " (height: " + pokemonList[i].height +")");
-        document.write("<span class= \"highlight\">Wow, that's big!</span><br>");
-    } else {
-        document.write (pokemonList[i].name  + " (height: " + pokemonList[i].height +")"); 
-        document.write("<br>");
-    }
-    
-     
-}*/
-/*Iliterate each pokemon character using forEach()
-pokemonList.forEach(function(list) {
-  document.write("<b>"+list.name + "</b><br>");  
-  document.write("Height : " + list.height + ". Type : " + list.types + "<br>");
-});*/
