@@ -6,7 +6,7 @@ let pokemonRepository = (function(){
     //First, set pokemonList array to blank array. This array contains Pokémon data to display in the application.
     let pokemonList = []; 
     //Create variable for API url and get 20 pokemons
-    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20";
+    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=100";
     //Declare modal container
     let modalContainer = document.querySelector("#modal-container");
     //Add Pokemon objects to the array
@@ -23,21 +23,22 @@ let pokemonRepository = (function(){
     }
      //Add pokemon to List (li)
     function addListItem(pokemon){
-        let pokemonList = document.querySelector(".pokemon-list");
-        //Create li for each pokemon
-        let listPokemon = document.createElement("li");
-        //Apply list style none
-        listPokemon.classList.add("noneList");
+        //Apply Bootstrap List Group class
+        let pokemonList = document.querySelector(".list-group");
+       
         //Create button style
         let button = document.createElement("button");
+        
         //Add pokemon name to button
         button.innerText = pokemon.name;
-        //Add class to button
-        button.classList.add("button");
-        //Append button to li
-        listPokemon.appendChild(button);
-        //Append li to pokemon-list
-        pokemonList.appendChild(listPokemon);
+        
+        //Add Bootstrap Button Utility class to button
+        button.classList.add("list-group-item");
+        button.classList.add("list-group-item-action");
+       
+        //Append button to div with class list-group
+        pokemonList.appendChild(button);
+        
         //Call addBtnEvent to create eventhandler for each newly created button
         addBtnEvent(button,pokemon);
     }
