@@ -53,3 +53,8 @@ body {
 }
 
 /*--End of Bootstrp*/
+.container {
+    
+    width: 95%;
+    min-height: 80%;
+}
