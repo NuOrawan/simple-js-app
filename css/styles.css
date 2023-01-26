@@ -47,14 +47,21 @@ body {
 /*--Bootstrap*/
 
 .page-container {
-    border: 1px solid black;
-    
     margin-top: 60px;
 }
-
 /*--End of Bootstrp*/
 .container {
-    
     width: 95%;
     min-height: 80%;
+}
+.loader{
+    position: fixed;
+    top: 50px;
+    left: 60px;
+    width: 20vw;
+    height: 10vh;
+    background-color: var(--light-blue);
+    font-size: var(--font-size-6);
+    color: var(--black);
+    text-align: center;
 }

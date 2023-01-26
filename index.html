@@ -31,38 +31,36 @@
     </nav>
     <div class="container page-container">
         <h1 class="display-4">Pokedex</h1>
-        <!--<div class="loader">Loading!</div>-->
+        <div class="loader">Loading!</div>
             <!--List and create a button for each pokemon-->
             <div class="pokemon-list"></div>
-            <!--Bootstrap's Modal-->
-                   
-            foo
-            <!--<div id="modal-container">-->
-            <div class="modal" id="pokemonModal" tabindex="-1" role="dialog">
-                bar
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <!--Modal header includes X button for closing-->
-                        <div class="modal-header">
-                            <!--Insert header below-->
-                            <h5 class="modal-title" id="pokemonModal"></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <!--Modal body for Pokemon's details such as name, height, and type-->
-                        <div class="modal-body">
+            <!--Bootstrap's Modal-->     
+            <div id="modal-container">
+                <div class="modal" id="pokemonModal" tabindex="-1" role="dialog">
+
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <!--Modal header includes X button for closing-->
+                            <div class="modal-header">
+                                <!--Insert header below-->
+                                <h5 class="modal-title" id="pokemonModal"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <!--Modal body for Pokemon's details such as name, height, and type-->
+                            <div class="modal-body">
+
+                            </div>
+                            <!--Modal Footer-->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
 
                         </div>
-                        <!--Modal Footer-->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-
                     </div>
                 </div>
             </div>
-            baz
 
             <!--Bootsrapt's jQuery first, then Popper.js, then Bootstrap JS -->
             <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
