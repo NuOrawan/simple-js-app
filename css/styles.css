@@ -37,31 +37,55 @@ and open the template in the editor.
 body {
   
   font-family: 'Lato', sans-serif;
-  color: var(--dark-grey);
+  color: var(--white);
   font-weight: var(--text-weight);
   font-size: var(--font-size-default);
   line-height: 1.6;
   background-color: var(--white);
   background-image: linear-gradient(90deg,var(--dark-purple),var(--fuchsia));
 }
-/*--Bootstrap*/
 
 .page-container {
     margin-top: 60px;
 }
-/*--End of Bootstrp*/
 .container {
     width: 95%;
     min-height: 80%;
+}
+.list-group-item{
+    background-color: var(--dark-purple);
+    border: none;
 }
 .loader{
     position: fixed;
     top: 50px;
     left: 60px;
-    width: 20vw;
+    width: 40vw;
     height: 10vh;
     background-color: var(--light-blue);
     font-size: var(--font-size-6);
     color: var(--black);
     text-align: center;
+}
+/*--Pokemon button setting--*/
+.pokemon-button{
+    background-color: var(--fuchsia);
+    text-transform: Capitalize;
+    border-radius: 5px;
+}
+
+.pokemon-button:hover{
+    background-color: var(--gray) ;
+}
+/*--Modal setting-*/
+.modal-content{
+    background-color: var(--fuchsia);
+    color: var(--white);
+}
+.modal-body{
+    background-color: var(--dark-purple);
+    text-align: center;
+}
+.modal-title{   
+    text-transform: Capitalize;
 }
