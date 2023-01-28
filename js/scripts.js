@@ -11,6 +11,9 @@ let pokemonRepository = (function(){
     let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=100";
      //Declare modal container
     let modalContainer = document.querySelector("#modal-container");
+    
+    
+    
     //Add Pokemon objects to the array
     function add(pokemon){
         //Check if parameter is type of Object and not null
@@ -148,6 +151,7 @@ let pokemonRepository = (function(){
         
     }
     
+    
     return{
         addListItem,
         add,
@@ -159,6 +163,7 @@ let pokemonRepository = (function(){
         showDetails,
         hideModal,
         showModal
+        
     };    
     
  })();

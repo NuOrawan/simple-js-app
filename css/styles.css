@@ -89,3 +89,11 @@ body {
 .modal-title{   
     text-transform: Capitalize;
 }
+/*Find Pokemon form style*/
+.input-wrapper {
+    margin-bottom: 10px;
+}
+.error-message{
+    color : var(--red);
+    font-size: var(--font-size-1);
+}
