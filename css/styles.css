@@ -97,3 +97,15 @@ body {
     color : var(--red);
     font-size: var(--font-size-1);
 }
+/*Find by name style*/
+.result{
+    padding-top: 5px;
+    text-transform: Capitalize;
+    text-align: center;
+    
+}
+.pokemon-image{
+    padding: 2px;
+    
+   
+}
