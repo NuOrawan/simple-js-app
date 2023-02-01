@@ -92,7 +92,8 @@
         function validateForm(){
             let isValidName = validateName();
             if (isValidName){
-                findByName(nameInput.val());
+                //Convert input value to all lowercase
+                findByName(nameInput.val().toLowerCase());
             }
         }
     $("form").submit(function(e){

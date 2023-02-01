@@ -98,14 +98,16 @@ body {
     font-size: var(--font-size-1);
 }
 /*Find by name style*/
+.note{
+    font-style: italic; 
+}
 .result{
     padding-top: 5px;
     text-transform: Capitalize;
     text-align: center;
-    
+   
 }
 .pokemon-image{
     padding: 2px;
-    
    
 }
