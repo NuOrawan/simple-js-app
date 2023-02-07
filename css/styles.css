@@ -56,7 +56,7 @@ body {
     background-color: var(--dark-purple);
     border: none;
 }
-.loader{
+/*.loader{
     position: fixed;
     top: 50px;
     left: 60px;
@@ -66,6 +66,42 @@ body {
     font-size: var(--font-size-6);
     color: var(--black);
     text-align: center;
+}*/
+/* Page loading setting*/
+.loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-purple);
+    transition: opacity 0.75s, visibility 0.75s;
+    
+}
+.loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+.loader::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid var(--light-grey);
+    border-top-color: var(--light-blue);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframe loading {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
 }
 /*--Pokemon button setting--*/
 .pokemon-button{

@@ -8,10 +8,12 @@ let pokemonRepository = (function(){
      //First, set pokemonList array to blank array. This array contains Pokémon data to display in the application.
     let pokemonList = []; 
     //Create variable for API url and get 20 pokemons
-    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=100";
+    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20";
      //Declare modal container
     let modalContainer = document.querySelector("#modal-container");
-    
+    //Loader
+    //let loaderElement = $(".loader");
+    let loaderElement = document.querySelector(".loader");
     
     
     //Add Pokemon objects to the array
@@ -50,11 +52,14 @@ let pokemonRepository = (function(){
     }
     //Show loading message in div while Pokemon is loading
     function showLoadingMessage(){
-        document.querySelector(".loader").style.display = "block";
+      // document.querySelector(".loader").style.display = "block";
+        loaderElement.classList.add("loader");
     }    
     //Hide loading message in div when page is done loading
     function hideLoadingMessage(){
-        document.querySelector(".loader").style.display = "none";
+       // document.querySelector(".loader").style.display = "none";
+         loaderElement.classList.add("loader-hidden");
+        
     }
     function loadList() {
         //Display loading message while Pokemons are being loaded.
