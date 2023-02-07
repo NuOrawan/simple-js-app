@@ -34,11 +34,30 @@
     </nav>
     
     <div class="container page-container">
+        <div class="d-flex flex-row justify-content-between">
+            <div class="p2">
+                <h1 class="display-5">Pokedex</h1>
+            </div>
+            <!--Search Pokemon by name form-->
+            <div class="p2">
+                <form id="findPokemon-form">
+                    <div class="form-group row">
+                        <div class="input-wrapper col-xs-2">
+                            <!--<label for="pokemonName">Enter Pokemon name 
+                                <span class="note">(For example Bulbasaur or bulbasaur)</span></label>-->
+                            <input class="form-control" id="pokemonName" placeholder="Enter Pokemon name" aria-label="Search Pokemon by name" type="text"/>
+                        </div>
+                        <div class="col-xs-2">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                        </div>      
+                    </div> 
+                </form>
+            </div>
+        </div>
         <div class="loader"></div>
-        <h1 class="display-5">Pokedex</h1>
         
             <!--List and create a button for each pokemon-->
-            <div class="pokemon-list"></div>
+            <div class="pokemon-list text-left"></div>
             <!--Bootstrap's Modal-->     
             <div id="modal-container">
                 <div class="modal" id="pokemonModal" tabindex="-1" role="dialog" aria-labeledby="PokemonModalLabel" aria-hidden="true">
@@ -74,7 +93,27 @@
             <script src="js/promise-polyfill.js"></script>
             <script src="js/fetch-polyfill.js"></script>
             <script src="js/scripts.js"></script>
-    </div>                
+    </div>   
+    <footer class="page-footer">
+        <p>Find me on</p>
+        <div class="social-media">
+            <!--Replace # with hyperlink to Git Hub -->
+            <a href="https://github.com/NuOrawan/portfolio-website.git" title="link to my work on Git hub logo" target="_blank">
+            <!--Git Hub logo -->
+            <img src="./img/icon/github.svg" alt="Git Hub">
+            </a>
+            <!--Replace # with hyperlink to Twitter -->
+            <a href="#" title="link to my work on Twitter logo" target="_blank">
+            <!--Twitter logo -->
+            <img src="./img/icon/twitter.svg" alt="Twitter logo">
+            </a>
+            <!--Replace # with hyperlink to LinkedIn -->
+            <a href="#" title="link to my work on LinkedIn " target="_blank">
+            <!--LinkedIn logo -->
+            <img src="./img/icon/linkedin.svg" alt="LinkedIn logo" width="32" height="32">
+            </a>
+        </div>    
+    </footer>    
                
     </body>
 </html>

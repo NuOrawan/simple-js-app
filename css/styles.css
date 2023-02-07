@@ -104,10 +104,16 @@ body {
     }
 }
 /*--Pokemon button setting--*/
+
 .pokemon-button{
+  
     background-color: var(--fuchsia);
     text-transform: Capitalize;
     border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    height: 50px;
 }
 
 .pokemon-button:hover{
@@ -146,4 +152,13 @@ body {
 .pokemon-image{
     padding: 2px;
    
+}
+/* Footer setting*/
+.page-footer{
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-top: 1px solid var(--dark-grey);
+    margin-top: 5px;
 }

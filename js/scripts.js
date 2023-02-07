@@ -8,7 +8,7 @@ let pokemonRepository = (function(){
      //First, set pokemonList array to blank array. This array contains Pokémon data to display in the application.
     let pokemonList = []; 
     //Create variable for API url and get 20 pokemons
-    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20";
+    let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=100";
      //Declare modal container
     let modalContainer = document.querySelector("#modal-container");
     //Loader
@@ -35,16 +35,16 @@ let pokemonRepository = (function(){
         //Select Bootstrap list-group class
         let pokemonListElement = $(".pokemon-list");
         
-        let listItem = $("<li class='list-group-item'></li>");
+      //  let listItem = $("<li class='list-group-item'></li>");
        
         //Create button triggered modal element
-        let button = $("<button class='pokemon-button btn btn-info btn-block' data-target='#pokemonModal' data-target='modal'>" + pokemon.name +"</button>");
-        
-        listItem.append(button);
+        //let button = $("<button class='pokemon-button btn btn-info btn-block' data-target='#pokemonModal' data-target='modal'>" + pokemon.name +"</button>");
+        let button = $("<button class='pokemon-button btn btn-info' data-target='#pokemonModal' data-target='modal'>" + pokemon.name +"</button>");
+       // listItem.append(button);
         
         //Append button to div with class pokemon-list
-        pokemonListElement.append(listItem);
-        
+        //pokemonListElement.append(listItem);
+        pokemonListElement.append(button);
         //Add event listner to show Pokemon details when clicked
         button.on('click', function(){
             showDetails(pokemon);
