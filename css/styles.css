@@ -52,21 +52,8 @@ body {
     width: 95%;
     min-height: 80%;
 }
-.list-group-item{
-    background-color: var(--dark-purple);
-    border: none;
-}
-/*.loader{
-    position: fixed;
-    top: 50px;
-    left: 60px;
-    width: 40vw;
-    height: 10vh;
-    background-color: var(--light-blue);
-    font-size: var(--font-size-6);
-    color: var(--black);
-    text-align: center;
-}*/
+
+
 /* Page loading setting*/
 .loader{
     position: fixed;
@@ -103,35 +90,28 @@ body {
         transform: rotate(1turn);
     }
 }
-/*--Pokemon button setting--*/
-
-.pokemon-button{
-  
-    background-color: var(--fuchsia);
-    text-transform: Capitalize;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-    width: 200px;
-    height: 50px;
+/*Header and Search setting*/
+.top-flex-container{
+    display: flex;
+    width: 95%;
+    min-height: 50px;
+    margin: 5px 2px 2px 0px;
+    border: 2px solid black;
+    
 }
-
-.pokemon-button:hover{
-    background-color: var(--gray) ;
+h1{
+    border: 2px solid black;
 }
-/*--Modal setting-*/
-.modal-content{
-    background-color: var(--fuchsia);
-    color: var(--white);
+.flex-item{
+    padding: 2px;
+    
 }
-.modal-body{
-    background-color: var(--dark-purple);
-    text-align: center;
+/*Find Pokemon form */
+#findPokemon-form{
+    border: 2px solid black;
+    
+    
 }
-.modal-title{   
-    text-transform: Capitalize;
-}
-/*Find Pokemon form style*/
 .input-wrapper {
     margin-bottom: 10px;
 }
@@ -139,7 +119,7 @@ body {
     color : var(--red);
     font-size: var(--font-size-1);
 }
-/*Find by name style*/
+/*Find by name and search result*/
 .note{
     font-style: italic; 
 }
@@ -153,6 +133,38 @@ body {
     padding: 2px;
    
 }
+/*--Pokemon button setting--*/
+.pokemon-list{
+    text-align: center;
+}
+
+.pokemon-button{
+  
+    background-color: var(--fuchsia);
+    text-transform: Capitalize;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    height: 50px;
+}
+
+.pokemon-button:hover{
+    background-color: var(--dark-purple) ;
+}
+/*--Modal setting-*/
+.modal-content{
+    background-color: var(--fuchsia);
+    color: var(--white);
+}
+.modal-body{
+    background-color: var(--dark-purple);
+    text-align: center;
+}
+.modal-title{   
+    text-transform: Capitalize;
+}
+
 /* Footer setting*/
 .page-footer{
     clear: both;

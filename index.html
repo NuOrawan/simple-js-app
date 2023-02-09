@@ -34,30 +34,31 @@
     </nav>
     
     <div class="container page-container">
-        <div class="d-flex flex-row justify-content-between">
-            <div class="p2">
-                <h1 class="display-5">Pokedex</h1>
-            </div>
-            <!--Search Pokemon by name form-->
-            <div class="p2">
-                <form id="findPokemon-form">
-                    <div class="form-group row">
-                        <div class="input-wrapper col-xs-2">
-                            <!--<label for="pokemonName">Enter Pokemon name 
-                                <span class="note">(For example Bulbasaur or bulbasaur)</span></label>-->
-                            <input class="form-control" id="pokemonName" placeholder="Enter Pokemon name" aria-label="Search Pokemon by name" type="text"/>
+       
+            <div class="d-flex flex-row flex-wrap justify-content-between top-flex-container">
+                <div class="p-2 align-self-sd-center align-middle flex-item">
+                    <h1 class="display-5">Pokedex</h1>
+                </div>
+                <!--Search Pokemon by name form-->
+                <div class="p-2 align-self-center flex-item">
+                    <form id="findPokemon-form">
+                        <div class="input-group mb-3">
+                            <input class="form-control" id="pokemonName" placeholder="Enter Pokemon name" aria-label="Search Pokemon by name" type="text">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
                         </div>
-                        <div class="col-xs-2">
-                        <button type="submit" class="btn btn-primary">Search</button>
-                        </div>      
-                    </div> 
-                </form>
+                    </form>
+                </div>  
+                <!--new form end-->
+                
+                
             </div>
-        </div>
+            
         <div class="loader"></div>
         
             <!--List and create a button for each pokemon-->
-            <div class="pokemon-list text-left"></div>
+            <div class="pokemon-list"></div>
             <!--Bootstrap's Modal-->     
             <div id="modal-container">
                 <div class="modal" id="pokemonModal" tabindex="-1" role="dialog" aria-labeledby="PokemonModalLabel" aria-hidden="true">

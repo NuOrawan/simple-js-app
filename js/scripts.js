@@ -15,7 +15,6 @@ let pokemonRepository = (function(){
     //let loaderElement = $(".loader");
     let loaderElement = document.querySelector(".loader");
     
-    
     //Add Pokemon objects to the array
     function add(pokemon){
         //Check if parameter is type of Object and not null
@@ -35,32 +34,31 @@ let pokemonRepository = (function(){
         //Select Bootstrap list-group class
         let pokemonListElement = $(".pokemon-list");
         
-      //  let listItem = $("<li class='list-group-item'></li>");
-       
         //Create button triggered modal element
-        //let button = $("<button class='pokemon-button btn btn-info btn-block' data-target='#pokemonModal' data-target='modal'>" + pokemon.name +"</button>");
-        let button = $("<button class='pokemon-button btn btn-info' data-target='#pokemonModal' data-target='modal'>" + pokemon.name +"</button>");
-       // listItem.append(button);
-        
+        let button = $("<button class='pokemon-button btn btn-info float-md-left float-lg-left' data-target='#pokemonModal' data-target='modal'>" + pokemon.name +"</button>");
+       
         //Append button to div with class pokemon-list
-        //pokemonListElement.append(listItem);
         pokemonListElement.append(button);
+        
         //Add event listner to show Pokemon details when clicked
         button.on('click', function(){
             showDetails(pokemon);
         });
     }
+    
     //Show loading message in div while Pokemon is loading
     function showLoadingMessage(){
       // document.querySelector(".loader").style.display = "block";
         loaderElement.classList.add("loader");
-    }    
+    }  
+    
     //Hide loading message in div when page is done loading
     function hideLoadingMessage(){
        // document.querySelector(".loader").style.display = "none";
          loaderElement.classList.add("loader-hidden");
         
     }
+    
     function loadList() {
         //Display loading message while Pokemons are being loaded.
         showLoadingMessage();
@@ -82,6 +80,7 @@ let pokemonRepository = (function(){
               
             });
     }
+    
     //Load details of each pokemon from external API
     function loadDetails(item) {
         let url = item.detailsUrl;
@@ -97,6 +96,7 @@ let pokemonRepository = (function(){
             }
         );
     }
+    
     //Show details of Pokemon in modal.
     function showDetails(item){
         pokemonRepository.loadDetails(item).then(function(){
