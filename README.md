@@ -1,4 +1,9 @@
 # Pokédex application
+
+This Pokedex application is a small client side web application that loaded Pokemons details from an external RESTful Pokedex API. 
+
+
+
 ## Main Page
 <img src="img/largemainpage.png">
 
