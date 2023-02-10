@@ -16,19 +16,14 @@ and open the template in the editor.
   --dark-grey: #777;
   --white: #FFF;
   --black: #000;
-  --red: #FF0000;
-  /*Font weight variables for headings*/
-  --heading-weight: 700; 
+  
+  
  /*Font weight variables*/
   --text-weight: 400; 
   /*Font size variables*/
   --font-size-default: 100%;
   --font-size-1: 1em;
-  --font-size-2: 1.2em;
-  --font-size-3: 1.44em;
-  --font-size-4: 1.728em;
-  --font-size-5: 2.074em;
-  --font-size-6: 2.488em;
+ 
 }
  /* Set the box-sizing to border-box on all elements*/ 
  * {
@@ -97,26 +92,13 @@ body {
     width: 95%;
     min-height: 50px;
     margin: 5px 2px 2px 0px;
-    bxorder: 2px solid black;
-    
 }
-h1{
-    bxorder: 2px solid black;
-}
+
 .flex-item{
-    bxorder: 2px solid white;
     padding: 2px;
-    
 }
 /*Find Pokemon form */
-.right{
-    float: right;
-}
-#findPokemon-form{
-    bxorder: 2px solid black;
-  
-    
-}
+
 .input-wrapper {
     margin-bottom: 2px;
 }
@@ -132,12 +114,6 @@ h1{
 }
 /*Search result*/
 
-.result{
-    padding-top: 5px;
-    text-transform: Capitalize;
-    text-align: center;
-   
-}
 .pokemon-image{
     padding: 2px;
    
@@ -148,7 +124,6 @@ h1{
 }
 
 .pokemon-button{
-  
     background-color: var(--fuchsia);
     text-transform: Capitalize;
     border-radius: 5px;

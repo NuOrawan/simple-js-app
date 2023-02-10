@@ -42,7 +42,7 @@ let pokemonRepository = (function(){
         pokemonListElement.append(button);
         
         //Add event listner to show Pokemon details when clicked
-        button.on('click', function(){
+        button.on("click", function(){
             showDetails(pokemon);
         });
     }
@@ -157,7 +157,7 @@ let pokemonRepository = (function(){
         modalBody.append(typesElement);
         
         let pokemonModal = $("#pokemonModal");
-        pokemonModal.modal('show');
+        pokemonModal.modal("show");
         
     }
     
@@ -185,7 +185,7 @@ pokemonRepository.loadList().then(function(){
     });
 });
  
-//Form Validation
+//Search form Validation
 (function(){
     let form = $("#findPokemon-form");
     let nameInput = $("#pokemonName");
@@ -195,7 +195,7 @@ pokemonRepository.loadList().then(function(){
         //Check and remove exisiting error message
         let error = messageContainer.find(".error-message");
         if (error){
-            $('.error-message').remove();
+            $(".error-message").remove();
         }
         // Now add the error if the message isn’t empty.
         if (message){
@@ -219,7 +219,7 @@ pokemonRepository.loadList().then(function(){
     //Search pokemon in the array by name
     function findByName(name){
         //Check if name is String and not empty
-        if(typeof name === 'string' && name.length > 0){
+        if(typeof name === "string" && name.length > 0){
             //Create variable for API url and get Pokemon by name
             let apiUrl = "https://pokeapi.co/api/v2/pokemon/" + name;
             
