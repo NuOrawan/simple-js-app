@@ -1,7 +1,6 @@
-# simple-js-app
-Pokédex application
+# Pokédex application
 ## Main Page
-
+Screen Shot Large
 ## Key Features 
   * Load Pokemons and their details  from an external Pokedex API.
   * Display loading image while Pokemons are being loaded. 
