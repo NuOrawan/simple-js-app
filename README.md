@@ -1,5 +1,6 @@
 # Pokédex application
 ## Main Page
+<img src="img/largemainpage.png">
 
 ## Key Features 
   * Load Pokemons and their details  from an external Pokedex API.
