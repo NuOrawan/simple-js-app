@@ -109,6 +109,9 @@ h1{
     
 }
 /*Find Pokemon form */
+.right{
+    float: right;
+}
 #findPokemon-form{
     bxorder: 2px solid black;
   
