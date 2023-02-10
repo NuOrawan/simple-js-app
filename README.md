@@ -3,10 +3,10 @@
 <img src="img/largemainpage.png">
 
 ## Key Features 
-  * Load Pokemons and their details  from an external Pokedex API.
+  * Load Pokemons and their details (image, height and type) from an external Pokedex API.
   * Display loading image while Pokemons are being loaded. 
-  * Display a list of Pokemons after the page is loaded.
-  * On user action (e.g., by clicking on a Pokemon), view details for that particular Pokemon in modal.
+  * Display a list of Pokemon after the page is loaded.
+  * On user action (e.g., by clicking on a Pokemon), display details for that particular Pokemon in modal.
   * Search a specific Pokemon on Pokedex API by name.
 
 ## Technologies
@@ -16,7 +16,7 @@
   * JavaScript 
   *	jQuery
 
-## Other technical fetaures
+## Other technical features
   * The app has CSS styling. 
   * The JavaScript code is formatted according to ESLint rules.
   * The app is deployed to a publicly accessible platform like GitHub Pages .
