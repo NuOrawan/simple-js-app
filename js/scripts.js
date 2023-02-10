@@ -49,15 +49,17 @@ let pokemonRepository = (function(){
     
     //Show loading message in div while Pokemon is loading
     function showLoadingMessage(){
-      // document.querySelector(".loader").style.display = "block";
+      
         loaderElement.classList.add("loader");
     }  
     
     //Hide loading message in div when page is done loading
     function hideLoadingMessage(){
-       // document.querySelector(".loader").style.display = "none";
+       
          loaderElement.classList.add("loader-hidden");
-        
+         //Remove loader 
+          $(".loader").remove();
+         
     }
     
     function loadList() {
@@ -131,15 +133,17 @@ let pokemonRepository = (function(){
         //Clear existing title and body in modal
         modalTitle.empty();
         modalBody.empty();
-       
+        
         //Create name element for modal content
         let nameElement = $("<h3>" + item.name +"</h3>");
-        
+       
         //Create image element for Pokemon in modal content section
         let imageElement = $("<img>");
         imageElement.addClass(".modal-img");
+        
         //Append imageElement with it's attributes
         imageElement.attr("src", item.imageUrl);
+        
         imageElement.attr("width", "50%");
         imageElement.attr("height", "50%");
         //Create height element
@@ -191,13 +195,12 @@ pokemonRepository.loadList().then(function(){
         //Check and remove exisiting error message
         let error = messageContainer.find(".error-message");
         if (error){
-            console.log("Existing error.");
             $('.error-message').remove();
         }
         // Now add the error if the message isn’t empty.
         if (message){
             //Create div element with error-message class
-            let error = $("<div class=' break error-message'></div>");
+            let error = $("<div class='break error-message'></div>");
             error.text(message);
             //Add error div to parent element ie. messageContainer
             messageContainer.append(error);
@@ -213,7 +216,7 @@ pokemonRepository.loadList().then(function(){
         showErrorMessage(nameInput,null);
         return true;  
     }
-    /*Search pokemon in the array by name
+    //Search pokemon in the array by name
     function findByName(name){
         //Check if name is String and not empty
         if(typeof name === 'string' && name.length > 0){
@@ -222,53 +225,21 @@ pokemonRepository.loadList().then(function(){
             
             //Find a match by name and return its details ie. image, height and type
             return fetch(apiUrl).then(function (response) {
-               // console.log("Response :" + response.json());
-                return response.json();
-            }).then(function (pokemon) {
-                //Remove result if there is any
-                let divElement = $(".result");
-                divElement.empty();
-                //Create name element for modal content
-                let nameElement = $("<h3>" + pokemon.name +"</h3>");
-                //Create image element for Pokemon in result section
-                let imageUrl = pokemon.sprites.front_default;   
-
-                let imageElement = $("<img>");
-                imageElement.addClass(".pokemon-img");
-                //Append imageElement with it's attributes
-                imageElement.attr("src", imageUrl);
-                imageElement.attr("width", "50%");
-                imageElement.attr("height", "50%");
-                //Create height element
-                let heightElement = $("<p class='h6'>" +"Height: "+ pokemon.height +"</p>");
-                //Create types element
-                let typesElement = $("<p class='h6'>" +"Types: "+ showTypes(pokemon) +"</p>");
-
-                divElement.append(nameElement);
-                divElement.append(imageElement);
-                divElement.append(heightElement);
-                divElement.append(typesElement);
-
+               return response.json();
+            }).then(function (response) {
+                //Create an object that contain imageUrl before passing to showModal()
+                let pokemon = response;
+                pokemon.imageUrl = response.sprites.front_default;
+                //Show search result in a modal
+                pokemonRepository.showModal(pokemon);
                 }).catch(function (e) {
-                    showErrorMessage(nameInput, "Sorry! We can't find this pokemon.");
+                    showErrorMessage(nameInput, "Sorry! Not found.");
                 });
         } else {
-            console.log("Sorry. It does not exist. Please try entering pokemon name again.");
+            console.log("Sorry! Not found.");
         }
     }
-    */
-    /*Show types of each Pokemon
-    function showTypes(pokemon){
-        let types = "";
-        //Loop through types which is an object from pokeapi.co containing name(s) of type(s) 
-        pokemon.types.forEach(function(obj){
-            type = obj["type"];
-            name = type["name"];
-            //Add space between each type name and make them as one string
-            types = types + name + " ";
-        });
-        return types;
-    }*/
+    
         function validateForm(){
             let isValidName = validateName();
             if (isValidName){
