@@ -19,7 +19,8 @@ This Pokedex application is a small client side web application that loaded Poke
   * CSS 
   * Bootstrap 4
   * JavaScript 
-  *	jQuery
+  * jQuery
+  * JSON
 
 ## Other technical features
   * The app has CSS styling. 
