@@ -32,21 +32,25 @@ and open the template in the editor.
 body {
   
   font-family: 'Lato', sans-serif;
+  padding-top: 40px;
   color: var(--white);
   font-weight: var(--text-weight);
   font-size: var(--font-size-default);
   line-height: 1.6;
   background-color: var(--white);
   background-image: linear-gradient(90deg,var(--dark-purple),var(--fuchsia));
+  height: 100%;
 }
 
+
 .page-container {
-    margin-top: 60px;
+    margin-top: 65px;
 }
+/*
 .container {
     width: 95%;
-    min-height: 80%;
-}
+    min-height: 100%;
+}*/
 
 
 /* Page loading setting*/
@@ -85,32 +89,26 @@ body {
         transform: rotate(1turn);
     }
 }
-/*Header and Search setting*/
-.top-flex-container{
-    display: flex;
-    flex-wrap: wrap;
-    width: 95%;
-    min-height: 50px;
-    margin: 5px 2px 2px 0px;
-}
 
-.flex-item{
-    padding: 2px;
-}
 /*Find Pokemon form */
 
 .input-wrapper {
     margin-bottom: 2px;
+    
 }
 /*Give a line break effect of error message within flex div*/
 .break {
+ 
   flex-basis: 100%;
   height: 0;
+ 
+  
 }
 .error-message{
-    color : var(--white);
+    color : var(--red);
     font-size: var(--font-size-1);
     padding-top: 2px;
+    
 }
 /*Search result*/
 
@@ -120,6 +118,7 @@ body {
 }
 /*--Pokemon button setting--*/
 .pokemon-list{
+    
     text-align: center;
 }
 
@@ -158,3 +157,11 @@ body {
     border-top: 1px solid var(--dark-grey);
     margin-top: 5px;
 }
+
+/* Set font size of h1 smaller for mobile*/ 
+@media only screen and (max-width: 400px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
