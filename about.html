@@ -32,6 +32,7 @@
        
     
     <div class="container page-container min-vh-75">
+        <div class="loader"></div>
         <h1 class="h1">About Pokedex</h1>
         <p>Pokedex application is a JavaScript app built with HTML, CSS, JavaScript and jQuery, which uses an external API.</p>
         <h4>Key Features</h4>
@@ -50,6 +51,33 @@
             <li>JavaScript</li>
             <li>jQuery</li>
         </ul>
+        <!--Bootstrap's Modal-->     
+        <div id="modal-container">
+            <div class="modal" id="pokemonModal" tabindex="-1" role="dialog" aria-labeledby="PokemonModalLabel" aria-hidden="true">
+
+                <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                    <div class="modal-content">
+                        <!--Modal header includes X button for closing-->
+                        <div class="modal-header">
+                            <!--Insert header below-->
+                            <h5 class="modal-title" id="pokemonModal"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!--Modal body for Pokemon's details such as name, height, and type-->
+                        <div class="modal-body">
+
+                        </div>
+                        <!--Modal Footer-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--Bootsrapt's jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
