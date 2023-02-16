@@ -124,7 +124,7 @@ const pokemonRepository = (function () {
       const types = obj.type;
       const name = types.name;
       // Add space between each type name and make them as one string
-      typesElement = typesElement + name + '';
+      typesElement = typesElement + name + ' ';
     });
     return typesElement;
   }
