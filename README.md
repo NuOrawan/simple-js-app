@@ -2,13 +2,11 @@
 
 This Pokedex application is a small client side web application that loaded Pokemons details from an external RESTful Pokedex API. 
 
-
+## Live Site
+  * <a href="https://nuorawan.github.io/simple-js-app/src">Link to live site</a>
 
 ## Main Page
 <img src="src/img/indexPage.png">
-
-## Live Site
-  * <a href="https://nuorawan.github.io/simple-js-app/src">Link to live site</a>
 
 ## Key Features 
   * Load Pokemons and their details (image, height and type) from an external Pokedex API.
