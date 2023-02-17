@@ -17,7 +17,7 @@ This Pokedex application is a small client side web application that loaded Poke
 
 ## Technologies
   * HTML 5
-  * CSS 
+  * CSS 3
   * Bootstrap 4
   * JavaScript 
   * jQuery
