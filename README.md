@@ -5,7 +5,7 @@ This Pokedex application is a small client side web application that loaded Poke
 
 
 ## Main Page
-<img src="/img/indexPage.png">
+<img src="src/img/indexPage.png">
 
 ## Key Features 
   * Load Pokemons and their details (image, height and type) from an external Pokedex API.
