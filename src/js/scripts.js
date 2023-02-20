@@ -7,8 +7,7 @@ const pokemonRepository = (function () {
   const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=100';
   const modalContainer = document.querySelector('#modal-container');
   const loaderElement = document.querySelector('.loader');
-
-  // Add Pokemon objects to the array. Pokemon object contain name and url 
+  // Add Pokemon objects to the array. Pokemon object contain names and url
   function add (pokemon) {
     // Check if parameter is type of Object and not null
     if (
@@ -22,12 +21,17 @@ const pokemonRepository = (function () {
       console.log('Invalid input! Please try again.');
     }
   }
-  // Get all Pokemon from the list
+  // Get all Pokemon from the list in ascending order
   function getAll () {
+    pokemonList.sort(function (a, b) {
+      a = a.name.toLowerCase();
+      b = b.name.toLowerCase();
+      return a === b ? 0 : a > b ? 1 : -1;
+    });
     return pokemonList;
   }
 
-  // Create pokemon buttons and when a button is clicked show Pokemon's details. Input Pokemon is an object containing name
+  // Create pokemon buttons and when a button is clicked show Pokemon's details. Input Pokemon is an object containing info. such as name, images, height, types and etc.
   function addListItem (pokemon) {
     // eslint-disable-next-line no-undef
     const pokemonListElement = $('.pokemon-list');
@@ -37,6 +41,7 @@ const pokemonRepository = (function () {
         pokemon.name +
         '</button>'
     );
+    // console.log('button name: ' + pokemon);
     pokemonListElement.append(button);
     button.on('click', function () {
       showDetails(pokemon);
@@ -48,16 +53,15 @@ const pokemonRepository = (function () {
     loaderElement.classList.add('loader');
   }
 
-  // Hide loading message in div when page is done loading
+  // Hide loading message in div when page finishes loading
   function hideLoadingMessage () {
     loaderElement.classList.add('loader-hidden');
     // eslint-disable-next-line no-undef
     $('.loader').remove();
   }
 
-  // ??
+  // Get Pokemons from external API and add them. Display loading message while Pokemons are being loaded and hide loading message.
   function loadList () {
-    // Display loading message while Pokemons are being loaded.
     showLoadingMessage();
     return fetch(apiUrl)
       .then(function (response) {
@@ -71,7 +75,6 @@ const pokemonRepository = (function () {
           };
           add(pokemon);
         });
-        // Hide loading message once all Pokemon is done loading.
         hideLoadingMessage();
       })
       .catch(function (e) {
@@ -79,7 +82,7 @@ const pokemonRepository = (function () {
       });
   }
 
-  // Load details of each pokemon from external API
+  // Load details of each pokemon from external API. Item input is pokemon objects and their URLs.
   function loadDetails (item) {
     const url = item.detailsUrl;
     return fetch(url)
@@ -170,9 +173,8 @@ const pokemonRepository = (function () {
     showModal
   };
 })();
-
+// Load Pokemons and add to list. Pokemon object contain info. of Pokemons from external API
 pokemonRepository.loadList().then(function () {
-  // Iterate each object in pokemonRepository using forEach()
   pokemonRepository.getAll().forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
